@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 30200
 
 spring:
   application:
@@ -9,12 +9,12 @@ spring:
     stream:
       bindings:
 
-        input:
+        visits-before-appointmant:
           destination: visits
 
-        output:
+        visits-after-appointmant:
           destination: visits-processed
 
-        visits-in:
+        outcomming-visits:
           destination: visits-processed
           contentType: application/json
