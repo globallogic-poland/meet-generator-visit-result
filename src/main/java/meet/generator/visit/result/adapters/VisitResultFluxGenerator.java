@@ -16,7 +16,7 @@ import static meet.generator.visit.result.ports.VisitResultBinding.VISITS_BEFORE
 
 @AllArgsConstructor
 @EnableBinding(VisitResultBinding.class)
-public class VisitResultGenerator {
+public class VisitResultFluxGenerator {
 
     private final VisitResultGeneratorService visitResultGeneratorService;
 

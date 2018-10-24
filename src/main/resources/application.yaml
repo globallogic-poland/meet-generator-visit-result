@@ -14,3 +14,9 @@ spring:
 
         visits-after-appointment:
           destination: visits-processed
+
+        visits-dispatcher-input:
+          destination: visits-processed
+
+        visits-dispatcher-output:
+          destination: visits-for-statistics-ks
