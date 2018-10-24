@@ -14,7 +14,3 @@ spring:
 
         visits-after-appointment:
           destination: visits-processed
-
-        outcomming-visits:
-          destination: visits-processed
-          contentType: application/json
