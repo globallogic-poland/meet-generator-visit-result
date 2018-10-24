@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Value
 @Builder
-public class Patient {
+public class Doctor {
 
     String id;
 
@@ -16,17 +16,13 @@ public class Patient {
 
     String lastName;
 
-    int age;
-
-    Sex sex;
-
-    @Singular
-    Set<Disease> chronicDiseases;
-
     String district;
 
     String city;
 
     String country;
+
+    @Singular
+    Set<Specialization> specializations;
 
 }

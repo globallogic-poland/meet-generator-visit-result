@@ -1,36 +1,34 @@
 package meet.generator.visit.result.model;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Singular;
-import lombok.Value;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Builder
-@Value
+@Getter
+@Setter
 public class Visit {
 
-    String id;
+    private String id;
 
-    String doctorId;
+    private Doctor doctor;
 
-    String patientId;
+    private Patient patient;
 
-    String clinicId;
+    private Clinic clinic;
 
-    // TODO: consider VisitResult
-
-    Disease diagnosedDisease;
+    private Disease diagnosedDisease;
 
     @Singular
-    List<Drug> prescribedDrugs;
+    private List<Drug> prescribedDrugs;
 
-    double clinicCost;
+    private double clinicCost;
 
-    double clinicIncome;
+    private double clinicIncome;
 
-    // TODO: @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    LocalDateTime appointmentTime;
+    private long appointmentTime;
 
 }

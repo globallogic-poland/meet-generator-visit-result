@@ -9,10 +9,10 @@ spring:
     stream:
       bindings:
 
-        visits-before-appointmant:
+        visits-before-appointment:
           destination: visits
 
-        visits-after-appointmant:
+        visits-after-appointment:
           destination: visits-processed
 
         outcomming-visits:

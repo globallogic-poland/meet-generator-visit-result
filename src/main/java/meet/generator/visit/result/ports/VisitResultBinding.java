@@ -7,15 +7,15 @@ import org.springframework.messaging.SubscribableChannel;
 
 public interface VisitResultBinding {
 
-    String VISITS_BEFORE_APPOINTMANT = "visits-before-appointmant";
-    String VISITS_AFTER_APPOINTMANT = "visits-after-appointmant";
+    String VISITS_BEFORE_APPOINTMENT = "visits-before-appointment";
+    String VISITS_AFTER_APPOINTMENT = "visits-after-appointment";
     String OUTCOMMING_VISITS = "outcomming-visits";
 
-    @Input(VISITS_BEFORE_APPOINTMANT)
-    MessageChannel visitsBeforeAppontmant();
+    @Input(VISITS_BEFORE_APPOINTMENT)
+    MessageChannel visitsBeforeAppontment();
 
-    @Output(VISITS_AFTER_APPOINTMANT)
-    MessageChannel visitsAfterAppontmant();
+    @Output(VISITS_AFTER_APPOINTMENT)
+    MessageChannel visitsAfterAppontment();
 
     @Input(OUTCOMMING_VISITS)
     SubscribableChannel outcommingVisits();

@@ -1,9 +1,7 @@
 package meet.generator.visit.result.model;
 
+// TODO: add price to drug
 public enum Drug {
-
-    // TODO: add price to drug
-
     LIPITOR,
     NEXIUM,
     PLAVIX,
@@ -14,6 +12,4 @@ public enum Drug {
     CRESTOR,
     ACTOS,
     EPOGEN
-
-
 }
