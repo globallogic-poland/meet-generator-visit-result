@@ -8,12 +8,14 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
+import static meet.generator.visit.result.ports.VisitResultBinding.OUTCOMMING_VISITS;
+
 @Component
 @Slf4j
 @EnableBinding(VisitResultBinding.class)
 public class VisitLog {
 
-    @StreamListener(VisitResultBinding.OUTCOMMING_VISITS)
+    @StreamListener(OUTCOMMING_VISITS)
     public void log(@Payload Visit visit) {
         log.info("Received visit: {}", visit);
     }
