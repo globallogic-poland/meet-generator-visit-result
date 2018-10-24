@@ -2,6 +2,7 @@ package meet.generator.visit.result.adapters;
 
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import meet.generator.visit.result.model.Visit;
 import meet.generator.visit.result.ports.VisitResultBinding;
 import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -11,8 +12,7 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.handler.annotation.Payload;
 
-import static org.apache.kafka.common.requests.DeleteAclsResponse.log;
-
+@Slf4j
 @AllArgsConstructor
 @EnableBinding(VisitResultBinding.class)
 public class VisitResultKafkaStreamsDispatcher {
@@ -25,7 +25,7 @@ public class VisitResultKafkaStreamsDispatcher {
 
         Message<Visit> message = MessageBuilder
                 .withPayload(visit)
-                .setHeader(KafkaHeaders.MESSAGE_KEY, null) // TODO: change that
+                .setHeader(KafkaHeaders.MESSAGE_KEY, visit.getDiagnosedDisease().toString())
                 .build();
 
         binding.visitsDispatcherOutput().send(message);

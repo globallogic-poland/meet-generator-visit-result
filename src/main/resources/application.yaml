@@ -20,3 +20,4 @@ spring:
 
         visits-dispatcher-output:
           destination: visits-for-statistics-ks
+          producer.header-mode: raw
