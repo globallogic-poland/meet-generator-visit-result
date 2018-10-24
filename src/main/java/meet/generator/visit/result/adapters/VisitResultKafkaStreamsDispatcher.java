@@ -25,7 +25,7 @@ public class VisitResultKafkaStreamsDispatcher {
 
         Message<Visit> message = MessageBuilder
                 .withPayload(visit)
-                .setHeader(KafkaHeaders.MESSAGE_KEY, visit.getDiagnosedDisease().toString())
+                .setHeader(KafkaHeaders.MESSAGE_KEY, null) // TODO: change that
                 .build();
 
         binding.visitsDispatcherOutput().send(message);
